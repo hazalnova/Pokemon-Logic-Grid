@@ -2,10 +2,18 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
+import { defineConfig } from 'vite'
+import react from '@vitejs/react-plugin'
+
+export default defineConfig({
+  plugins: [react()],
+  base: '/your-repository-name/', // 👈 ADD THIS LINE WITH YOUR EXACT REPO NAME
+})
 
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
+    base: '/Pokemon-Logic-Grid/',
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
